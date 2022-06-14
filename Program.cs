@@ -20,7 +20,7 @@ do
     seleccion = int.Parse(Console.ReadLine());
     Console.WriteLine();
 
-    if (seleccion != 0 || seleccion != 5)
+    if (!(seleccion == 0 || seleccion == 5))
     {
         Console.Write("Ingrese el numero: ");
         numero = double.Parse(Console.ReadLine());
