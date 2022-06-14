@@ -5,34 +5,40 @@
     public classCalculadora(double valor)
     {
         resultado = valor;
+
     }
 
     public classCalculadora()
     {
     }
 
-    public void suma(double valor)
+    public void sumar(double valor)
     {
         resultado += valor;
+
     }
 
-    public void resta(double valor)
+    public void restar(double valor)
     {
         resultado -= valor;
+
     }
 
-    public void multiplicacion(double valor)
+    public void multiplicar(double valor)
     {
         resultado *= valor;
+
     }
 
     public void dividir(double valor)
     {
-        resultado = valor != 0 ? resultado /= valor : 0;
+        resultado = valor != 0 ? resultado /= valor : resultado;
+
     }
 
     public void limpiar()
     {
-        resultado = 0;   
+        resultado = 0;
+
     }
 }
