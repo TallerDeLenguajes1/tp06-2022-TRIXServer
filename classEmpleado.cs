@@ -75,13 +75,8 @@ class functions
         var cantidad = constantes.cantidadEmpleados;
         string nombre;
         string apellido;
-        DateOnly fechaNacimiento;
-        DateOnly fechaIngreso;
-        int dia;
-        int mes;
-        int anio;
-        int cargo;
-        double sueldoBasico;
+        char estadoCivil;
+        char genero;
         for (int i = 0; i < cantidad; i++)
         {
             System.Console.WriteLine();
@@ -90,9 +85,46 @@ class functions
             System.Console.WriteLine($"\tEmpleado: {i + 1}");
             System.Console.WriteLine("--");;
             Console.Write("Ingrese el apellido: ");
-            apellido = Console.ReadLine("");
-            System.Console.WriteLine();
-            
+            apellido = Console.ReadLine();
+            System.Console.Write("Ingrese el nombre: ");
+            nombre = Console.ReadLine();
+            System.Console.Write("Ingrese estado civil (S - Soltero, P - En pareja, C - Casado, V - Viudo): ");
+            estadoCivil = char.ToUpper(Console.ReadKey().KeyChar);
+            System.Console.Write("Ingrese el genero (M - Masculino, F - Femenino): ");
+            genero = char.ToUpper(Console.ReadKey().KeyChar);
+            System.Console.WriteLine("Fecha de Nacimiento: ");
+            System.Console.Write("Dia: ");
+            int dia = Convert.ToInt32(Console.ReadLine());
+            System.Console.Write("Mes: ");
+            int mes = Convert.ToInt32(Console.ReadLine());
+            System.Console.Write("Anio: ");
+            int anio = Convert.ToInt32(Console.ReadLine());
+            DateOnly fechaNacimiento = new DateOnly(anio, mes, dia);
+            System.Console.WriteLine("Fecha de Ingreso: ");
+            System.Console.Write("Dia: ");
+            dia = Convert.ToInt32(Console.ReadLine());
+            System.Console.Write("Mes: ");
+            mes = Convert.ToInt32(Console.ReadLine());
+            System.Console.Write("Anio: ");
+            anio = Convert.ToInt32(Console.ReadLine());
+            DateOnly fechaIngreso = new DateOnly(anio, mes, dia);
+            System.Console.Write("Ingrese el sueldo basico: ");
+            double sueldoBasico = Convert.ToDouble(Console.ReadLine());
+            System.Console.WriteLine("Ingrese el cargo el que pertenece (1 - Auxiliar, 2 - Administrativo, 3 - Ingeniero, 4 - Especialista, 5 - Investigador): ");
+            int cargo = Convert.ToInt32(Console.ReadLine());
+
+            var empleado = new empleado(nombre, apellido, estadoCivil, genero, cargo, fechaNacimiento, fechaIngreso, sueldoBasico);
+
+            dataListaEmpleados.Add(empleado);
+
         }
+    }
+
+    public void mostrarEmpleado(empleado dataEmpleado, double dataSalario, int dataAntiguedad, int dataEdad, int dataJubilacion)
+    {
+        System.Console.WriteLine($"Apellido y nombre: {dataEmpleado.Apellido}, {dataEmpleado.Nombre}");
+        System.Console.WriteLine($"Estado civil: {dataEmpleado.EstadoCivil}");
+        System.Console.WriteLine($"Genero: {dataEmpleado.Genero}");
+        System.Console.WriteLine();
     }
 }
