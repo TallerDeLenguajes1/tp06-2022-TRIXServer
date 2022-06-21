@@ -8,8 +8,6 @@ public class empleado
     private char genero;
     private DateTime fechaIngreso;
     private double sueldoBasico;
-    private classCargo cargos;
+    private string cargos;
 
 }
-
-
