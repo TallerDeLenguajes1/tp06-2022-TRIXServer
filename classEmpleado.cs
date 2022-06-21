@@ -125,6 +125,14 @@ class functions
         System.Console.WriteLine($"Apellido y nombre: {dataEmpleado.Apellido}, {dataEmpleado.Nombre}");
         System.Console.WriteLine($"Estado civil: {dataEmpleado.EstadoCivil}");
         System.Console.WriteLine($"Genero: {dataEmpleado.Genero}");
-        System.Console.WriteLine();
+        System.Console.WriteLine($"Fecha de nacimiento: {dataEmpleado.FechaNacimiento}");
+        System.Console.WriteLine($"Fecha de ingreso: {dataEmpleado.FechaIngreso}");
+        System.Console.WriteLine($"Sueldo basico: ${dataEmpleado.SueldoBasico}");
+        System.Console.WriteLine($"Salario: ${dataSalario}");
+        System.Console.WriteLine($"Cargo: {dataEmpleado.Cargo}");
+        System.Console.WriteLine($"Antiguedad: {dataAntiguedad} anios");
+        System.Console.WriteLine($"Edad: {dataEdad} anios");
+        System.Console.WriteLine($"Anios que restan para jubilarse: {dataJubilacion}");
+        
     }
 }
