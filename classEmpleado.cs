@@ -84,11 +84,14 @@ class functions
         double sueldoBasico;
         for (int i = 0; i < cantidad; i++)
         {
-            Console.WriteLine("\n\n");
+            System.Console.WriteLine();
+            System.Console.WriteLine();
             Console.WriteLine("--");
             System.Console.WriteLine($"\tEmpleado: {i + 1}");
             System.Console.WriteLine("--");;
-            
+            Console.Write("Ingrese el apellido: ");
+            Console.Read
+
         }
     }
 }
