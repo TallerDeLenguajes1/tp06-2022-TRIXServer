@@ -1,6 +1,6 @@
 public class empleado
 {
-    private int id;
+    private int idEmpleado;
     private string nombre;
     private string apellido;
     private DateTime fechaNacimiento;
@@ -10,4 +10,7 @@ public class empleado
     private double sueldoBasico;
     private string cargos;
 
-}
+};
+
+Console.WriteLine("");
+
