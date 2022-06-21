@@ -66,3 +66,29 @@ public enum genero
     Femenino = 'F'
 
 }
+
+class functions
+{
+
+    public void cargarDatos(List<empleado> dataListaEmpleados)
+    {
+        var cantidad = constantes.cantidadEmpleados;
+        string nombre;
+        string apellido;
+        DateOnly fechaNacimiento;
+        DateOnly fechaIngreso;
+        int dia;
+        int mes;
+        int anio;
+        int cargo;
+        double sueldoBasico;
+        for (int i = 0; i < cantidad; i++)
+        {
+            Console.WriteLine("\n\n");
+            Console.WriteLine("--");
+            System.Console.WriteLine($"\tEmpleado: {i + 1}");
+            System.Console.WriteLine("--");;
+            
+        }
+    }
+}
