@@ -90,8 +90,9 @@ class functions
             System.Console.WriteLine($"\tEmpleado: {i + 1}");
             System.Console.WriteLine("--");;
             Console.Write("Ingrese el apellido: ");
-            Console.Read
-
+            apellido = Console.ReadLine("");
+            System.Console.WriteLine();
+            
         }
     }
 }
