@@ -1,42 +1,87 @@
-   var cantidad = constantes.cantidadEmpleados;
-        string nombre;
-        string apellido;
-        char estadoCivil;
-        char genero;
-        DateOnly fechaNacimiento;
-        DateOnly fechaIngreso;
-        int dia;
-        int mes;
-        int anio;
-        int cargo;
-        double sueldoBasico;
-        for (int i = 0; i < cantidad; i++)
+static void Main(string[] args)
+{
+    var cantidad = constantes.cantidadEmpleados;
+    var functions = new functions();
+
+    var listaEmpleados = new List<empleado>();
+    functions.cargarDatos(listaEmpleados);
+
+    var antiguedad = new int[cantidad];
+    var edad = new int[cantidad];
+    var jubilacion = new int[cantidad];
+    var salario = new double[cantidad];
+    double adicional;
+
+    for (int i = 0; i < cantidad; i++)
+    {
+        antiguedad[i] = DateTime.Now.Year - listaEmpleados[i].FechaIngreso.Year;
+
+        if (DateTime.Now.Month < listaEmpleados[i].FechaIngreso.Month)
         {
-            System.Console.WriteLine();
-            System.Console.WriteLine();
-            Console.WriteLine("--");
-            System.Console.WriteLine($"\tEmpleado: {i + 1}");
-            System.Console.WriteLine("--");;
-            Console.Write("Ingrese el apellido: ");
-            apellido = Console.ReadLine();
-            System.Console.WriteLine();
-            System.Console.Write("Ingrese el nombre: ");
-            nombre = Console.ReadLine();
-            System.Console.WriteLine();
-            System.Console.Write("Ingrese estado civil (S - Soltero, P - En pareja, C - Casado, V - Viudo): ");
-            estadoCivil = char.ToUpper(Console.ReadKey().KeyChar);
-            System.Console.WriteLine();
-            System.Console.Write("Ingrese el genero (M - Masculino, F - Femenino): ");
-            genero = char.ToUpper(Console.ReadKey().KeyChar);
-            System.Console.WriteLine();
-            System.Console.WriteLine("Fecha de Nacimiento: ");
-            System.Console.Write("Dia: ");
-            dia = Convert.ToInt32(Console.ReadLine());
-            System.Console.Write("Mes: ");
-            mes = Convert.ToInt32(Console.ReadLine());
-            System.Console.Write("Anio: ");
-            anio = Convert.ToInt32(Console.ReadLine());
-            System.Console.WriteLine();
+            antiguedad[i]--;
+
+        }
+        else
+        {
+            if (DateTime.Now.Month == listaEmpleados[i].FechaIngreso.Month && DateTime.Now.Day < listaEmpleados[i].FechaIngreso.Day)
+            {
+                antiguedad[i]--;
+
+            }
         }
 
+        edad[i] = DateTime.Now.Year - listaEmpleados[i].FechaNacimiento.Year;
 
+        if (DateTime.Now.Month < listaEmpleados[i].FechaNacimiento.Month)
+        {
+            edad[i]--;
+
+        }
+        else
+        {
+            if (DateTime.Now.Month == listaEmpleados[i].FechaNacimiento.Month && DateTime.Now.Day < listaEmpleados[i].FechaNacimiento.Day)
+            {
+                edad[i]--;
+
+            }
+        }
+
+        if (Convert.ToString((genero)'M') == listaEmpleados[i].Genero)
+        {
+            jubilacion[i] = 65 - edad[i];
+
+        }
+        else
+        {
+            jubilacion[i] = 60 - edad[i];
+
+        }
+
+        adicional = 0;
+        if (antiguedad[i] < 20)
+        {
+            adicional = (listaEmpleados[i].SueldoBasico / 100) * antiguedad[i];
+
+        }
+        else
+        {
+            adicional = (listaEmpleados[i].SueldoBasico / 100) * 20;
+
+        }
+
+        if ((Convert.ToString((cargo) 3)) == listaEmpleados[i].Cargo || Convert.ToString((cargo) 4) == listaEmpleados[i].Cargo);
+        {
+            adicional += (adicional / 2);
+
+        }
+
+        if (Convert.ToString((estadoCivil) 'C') == listaEmpleados[i].EstadoCivil)
+        {
+            adicional += 15000;
+
+        }
+        
+        salario[i] = listaEmpleados[i].SueldoBasico + adicional;
+
+    }
+}
