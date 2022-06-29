@@ -41,15 +41,6 @@ class constantes
 
 }
 
-public enum cargo
-{
-    Auxiliar = 1,
-    Administrativo = 2,
-    Ingeniero = 3,
-    Especialista = 4,
-    Investigador = 5
-
-}
 
 public enum estadoCivil
 {
@@ -64,6 +55,16 @@ public enum genero
 {
     Masculino = 'M',
     Femenino = 'F'
+
+}
+
+public enum cargo
+{
+    Auxiliar = 1,
+    Administrativo = 2,
+    Ingeniero = 3,
+    Especialista = 4,
+    Investigador = 5
 
 }
 
@@ -90,8 +91,10 @@ class functions
             nombre = Console.ReadLine();
             System.Console.Write("Ingrese estado civil (S - Soltero, P - En pareja, C - Casado, V - Viudo): ");
             estadoCivil = char.ToUpper(Console.ReadKey().KeyChar);
+            System.Console.WriteLine();
             System.Console.Write("Ingrese el genero (M - Masculino, F - Femenino): ");
             genero = char.ToUpper(Console.ReadKey().KeyChar);
+            System.Console.WriteLine();
             System.Console.WriteLine("Fecha de Nacimiento: ");
             System.Console.Write("Dia: ");
             int dia = Convert.ToInt32(Console.ReadLine());
