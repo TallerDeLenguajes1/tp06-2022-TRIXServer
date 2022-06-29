@@ -69,7 +69,7 @@ static void Main(string[] args)
 
         }
 
-        if ((Convert.ToString((cargo) 3)) == listaEmpleados[i].Cargo || Convert.ToString((cargo) 4) == listaEmpleados[i].Cargo);
+        if ((Convert.ToString((cargo) 3)) == listaEmpleados[i].Cargo || Convert.ToString((cargo) 4) == listaEmpleados[i].Cargo)
         {
             adicional += (adicional / 2);
 
@@ -84,4 +84,29 @@ static void Main(string[] args)
         salario[i] = listaEmpleados[i].SueldoBasico + adicional;
 
     }
+
+    int valorJubilacion = jubilacion[0];
+    int posicionJubilacion = 0;
+    double montoTotal = 0;
+
+    for (int i = 0; i < cantidad; i++)
+    {
+        if (valorJubilacion > jubilacion[i])
+        {
+            valorJubilacion = jubilacion[i];
+            posicionJubilacion = i;
+
+        }
+
+        montoTotal += salario[i];
+
+    }
+
+    System.Console.WriteLine("--");
+    System.Console.WriteLine($"\tEmpleado mas cerca de jubilarse");
+    functions.mostrarEmpleado(listaEmpleados[posicionJubilacion], salario[posicionJubilacion], antiguedad[posicionJubilacion], edad[posicionJubilacion], jubilacion[posicionJubilacion]);
+
+    System.Console.WriteLine("--");
+    System.Console.WriteLine($"Monto total de salarios: {montoTotal}");
+
 }
